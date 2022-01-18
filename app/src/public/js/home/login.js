@@ -1,6 +1,6 @@
 "use strict";
 
-const { json } = require("express");
+//const { json } = require("express");
 
 const id = document.querySelector("#id"),
     password = document.querySelector("#psword"),
@@ -20,6 +20,10 @@ function login(){
             "Content-Type": "application/json"
         },
         body: JSON.stringify(req),
-    });
+    })
+        .then((res) => res.json())
+        .then((res) => {
+
+        });
 }
 
