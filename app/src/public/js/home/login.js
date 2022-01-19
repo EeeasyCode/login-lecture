@@ -1,6 +1,7 @@
 "use strict";
 
-//const { json } = require("express");
+//프론트 개발 로직
+
 
 const id = document.querySelector("#id"),
     password = document.querySelector("#psword"),
