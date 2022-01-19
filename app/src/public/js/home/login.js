@@ -1,6 +1,6 @@
 "use strict";
 
-//프론트 개발 로직
+//프론트 개발 로직  
 
 
 const id = document.querySelector("#id"),
