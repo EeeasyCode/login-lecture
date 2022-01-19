@@ -39,7 +39,8 @@ class User {
     register() {
         //위에서 constructor로 선언해서 가져다 쓰면 이렇게 const 변수로 다시 선언할 필요가 없음 const client가 3번이 선언되었는데 다 같은 값이라 constructor에 선언해도 됨
         // const client = this.body;
-        const response = UserStorage.save(this.client.id); 
+        const response = UserStorage.save(this.client); 
+        // const response = UserStorage.insert(this.client)
         return response;
     }
 }
