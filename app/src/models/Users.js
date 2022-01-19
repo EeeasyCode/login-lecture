@@ -14,7 +14,7 @@ class User {
     }
 
     loginV2() {
-        const user = UserStorage.getUserByLoginData(this.client.id)
+        const user = UserStorage.getUserByLoginData(this.client.id) //요 getUserByLoginData는 userStorage에 구현해놨음
 
         if (!user) return { success: false, msg: '존재하지 않는 아이디입니다.' }
         if (user.psword !== this.client.psword) return { success: false, msg: '비밀번호가 일치하지 않습니다.' }

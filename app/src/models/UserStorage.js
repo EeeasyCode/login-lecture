@@ -34,7 +34,7 @@ class UserStorage {
 
 
     // object array를 사용하면 이런식으로 내장 메소드를 사용하면 조금 더 단순하게 로직을 작성할수 있음 maybe
-    static getUserById (id) {
+    static getUserByLoginData (id) {
         return this.userList.find(user => user.id === id)
     }
 

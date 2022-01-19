@@ -39,7 +39,7 @@ function register(){
         })
         .catch((err) => {
             console.error("회원가입 중 에러 발생");
-            console.err(err) // console err로 fetch의 에러가 뭔지 알면 디버깅할때 조금 편함
+            console.error(err) //fetch에서 err를 어떻게 리턴해주는지는 모르겠는데 console err로 fetch의 에러가 뭔지 알면 디버깅할때 조금 편함
         });
 
 }
