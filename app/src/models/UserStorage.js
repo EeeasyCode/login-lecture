@@ -1,5 +1,9 @@
 "use strict";
 
+//유저 스토리지 만들기 다시 복습하기 
+//이해가 잘 안됨
+
+
 class UserStorage {
      static #users = {
         id: ["ethan", "이창민", "이성희"],
@@ -16,6 +20,18 @@ class UserStorage {
             return newUsers;
         }, {});
         return newUsers; 
+    }
+    static getUserInfo(id) {
+        const users = this.#users;
+        const idx = users.id.indexOf(id);
+        const usersKeys = Object.keys(users); // => [id, pw, name]
+        const userInfo = usersKeys.reduce((newUser, info) => {
+            newUser[info] = users[info][idx];
+            return newUser;
+        }, {});
+
+        return userInfo;
+
     }
 }
 
