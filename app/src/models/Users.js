@@ -9,12 +9,12 @@ class User {
     }
 
     login(){
-        const body = this.body;
-        const { id, psword } = UserStorage.getUserInfo(body.id);
+        const client = this.body;
+        const { id, psword } = UserStorage.getUserInfo(client.id);
 
     //스토리지에 있는 id, pw 값과 클라이언트가 입력한 값이 일치하는지 검증하는 로직
         if(id) {
-            if (id === body.id && psword === body.psword){
+            if (id === client.id && psword === client.psword){
                 return { success: true };
                 }
             return { success: false, msg: "비밀번호가 일치하지 않습니다."};
@@ -22,6 +22,11 @@ class User {
         return { success: false, msg: "존재하지 않는 아이디입니다."};
     }
     
+    register(){
+        const client = this.body;
+        const response = UserStorage.save(client); 
+        return response;
+    }
 }
 
 
