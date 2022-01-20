@@ -3,11 +3,11 @@
 //프론트 개발 로직  
 
 
-const id = document.querySelector("#id"),
-    name = document.querySelector("#name"),
-    password = document.querySelector("#psword"),
-    confirmPassword = document.querySelector("#confirm-psword"),
-    registerBtn = document.querySelector("#button");
+const id = document.querySelector("#id");
+const name = document.querySelector("#name");
+const password = document.querySelector("#psword");
+const confirmPassword = document.querySelector("#confirm-psword");
+const registerBtn = document.querySelector("#button");
 
 registerBtn.addEventListener("click", register);
 

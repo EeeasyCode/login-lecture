@@ -12,6 +12,7 @@ class User {
     //함수를 비동기 함수로 바꿔줘야함
     async login(){
         const client = this.body;
+        try{
         const { id, psword } = await UserStorage.getUserInfo(client.id);
 
     //스토리지에 있는 id, pw 값과 클라이언트가 입력한 값이 일치하는지 검증하는 로직
@@ -22,9 +23,12 @@ class User {
             return { success: false, msg: "비밀번호가 일치하지 않습니다."};
             }
         return { success: false, msg: "존재하지 않는 아이디입니다."};
+        } catch(err){
+            return { success: false, msg: err };
+        }
     }
     
-    async register(){
+    async register(){ 
         const client = this.body;
         try {
         const response = await UserStorage.save(client); 
