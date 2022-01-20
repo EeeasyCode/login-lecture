@@ -8,9 +8,11 @@ class User {
         this.body = body;
     }
 
-    login(){
+    //await은 프로미스를 반환하는 애한테 주는 옵션
+    //함수를 비동기 함수로 바꿔줘야함
+    async login(){
         const client = this.body;
-        const { id, psword } = UserStorage.getUserInfo(client.id);
+        const { id, psword } = await UserStorage.getUserInfo(client.id);
 
     //스토리지에 있는 id, pw 값과 클라이언트가 입력한 값이 일치하는지 검증하는 로직
         if(id) {

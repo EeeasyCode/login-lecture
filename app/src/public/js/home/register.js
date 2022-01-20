@@ -22,6 +22,7 @@ function register(){
     };
     console.log(req);
 
+    //promise 반환
     fetch("/register",{
         method: "POST",
         headers: {
