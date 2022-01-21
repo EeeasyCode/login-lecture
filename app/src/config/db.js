@@ -8,5 +8,5 @@ const db = mysql.createConnection({
 });
 
 db.connect();
-ㅎ
+
 module.exports = db;
