@@ -12,3 +12,5 @@ src폴더에는 mvc 디자인 패턴대로 정리해놨음
     -models
     -views
     -routes(콘트롤러 기능 구현)
+
+mac pro(intel) -> mac pro(m1 pro)
