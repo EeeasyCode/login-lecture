@@ -8,16 +8,16 @@ class User {
         this.body = body;
     }
 
-    //await은 프로미스를 반환하는 애한테 주는 옵션
+    //await은 promise를 반환하는 애한테 주는 옵션
     //함수를 비동기 함수로 바꿔줘야함
     async login(){
         const client = this.body;
         try{
-        const { id, psword } = await UserStorage.getUserInfo(client.id);
+        const user = await UserStorage.getUserInfo(client.id);
 
     //스토리지에 있는 id, pw 값과 클라이언트가 입력한 값이 일치하는지 검증하는 로직
-        if(id) {
-            if (id === client.id && psword === client.psword){
+        if(user) {
+            if (user === client.id && psword === client.psword){
                 return { success: true };
                 }
             return { success: false, msg: "비밀번호가 일치하지 않습니다."};
